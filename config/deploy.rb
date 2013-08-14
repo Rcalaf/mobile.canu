@@ -20,8 +20,8 @@ set :user, "deploy"
 # Deploy settings
 #
 
-set :application, "iceberg.canu.se"
-set :local_app, "canu.se"
+set :application, "m.canu.se"
+set :local_app, "m.canu.se"
 set :deploy_to, "/home/#{user}/#{application}"
 
 ### 

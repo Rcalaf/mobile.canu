@@ -19,7 +19,7 @@ class UsersController < ApplicationController
    end
    #Mailer.new_user_mail(@user).deliver
  
-    redirect_to :back
+    redirect_to :back, :anchor => 'form'
   end
   
 =begin
