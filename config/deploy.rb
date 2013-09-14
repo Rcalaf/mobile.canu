@@ -27,11 +27,16 @@ set :deploy_to, "/home/#{user}/#{application}"
 ### 
 # Git settings
 #
+#set :scm, :git
+#set :repository,  "."  #point to github CLONE URL.
+#set :copy_strategy, :export
+#set :copy_compression, :gzip
+#set :deploy_via, :copy
+
 set :scm, :git
-set :repository,  "."  #point to github CLONE URL.
-set :copy_strategy, :export
-set :copy_compression, :gzip
-set :deploy_via, :copy
+set :repository, "git@github.com:Rcalaf/mobile.canu.git"  #point to github CLONE URL.
+set :branch, "master"
+set :deploy_via, :remote_cache
 
 
 ###
@@ -61,7 +66,6 @@ end
 #
 
 namespace :maintenance do 
-  
   desc "Deploy maintenance folder and Virtual Host."
   task :setup, :roles => :web do
     system "tar -czvf #{application}_maintenance.tgz maintenance/"
