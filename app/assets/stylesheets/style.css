@@ -179,22 +179,30 @@ div.feature p.header {
 	font-size: 36px;
 	line-height: 54px;    
 	font-weight: 700;
-	float: left;
 	width: 250px;
 	text-align: center;
 	padding: 40px 0;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: #fff;
 	text-shadow: 0.04em 0.03em 0.02em rgba(100,100,100, 0.5);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);	
+	
+	color: #6d6e7a; 
+	
+	float: left;  
+	margin-top: 20px;
+	
+	font-size: 38px;
+	line-height: 58px;    
+	font-weight: 700;
+	width: 250px;
+	text-shadow: 0.015em 0.025em 0.015em rgba(255,255,255, 0.7);
 }
 
 div.feature p.header_secondary {
 	font-size: 21px;
 	line-height: 34px;    
 	font-weight: 400;
-	width: 300px;
+	width: 250px;
 	padding: 30px 0;
 	color: #fff;
 	text-shadow: 0.05em 0.05em 0.02em rgba(100,100,100, 0.5);
@@ -280,8 +288,8 @@ Feature Details
 }
 
 #f_intro_about {
-	height: 210px;
-	background-image: url("/assets/team_sample.png");
+	height: 340px;
+	background: url("/assets/team_4.jpg") no-repeat center center;
 	 -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
