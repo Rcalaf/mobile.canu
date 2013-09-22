@@ -41,7 +41,7 @@ Content
 
 img.appstore_badge {
 	float: left;
-	margin: 20px 0 20px 90px;
+	margin: 0 0 20px 90px;
 	width: 134px;
 	height: auto;
 	z-index: 9999;
@@ -183,7 +183,7 @@ div.feature p.header {
 	text-align: center;
 	padding: 40px 0;
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	text-shadow: 0.04em 0.03em 0.02em rgba(100,100,100, 0.5);
 	
 	color: #6d6e7a; 
@@ -204,7 +204,7 @@ div.feature p.header_secondary {
 	font-weight: 400;
 	width: 250px;
 	padding: 30px 0;
-	color: #fff;
+	color: #939598; 
 	text-shadow: 0.05em 0.05em 0.02em rgba(100,100,100, 0.5);
 	border-top: 1px solid rgba(255, 255, 255, 0.2);	
 }
