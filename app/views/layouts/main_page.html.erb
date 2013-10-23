@@ -57,17 +57,17 @@
 			</ul>
 			<div class="mobile_content">
 				<%= yield%>
-			<!--	<div class="feature" style="background-color: #fafafa">	    
+				<div class="feature" style="background-color: #fafafa">	    
 					<a name="form"></a>
 					<div class="form_window" id="form_join">
 						<%= form_for @user, :url => new_user_url do |f|%>
 						<div class="input_holder">
-							<input name="user[email]" type="text" id="email" class="email<%= flash[:error].nil? ? '' : ' error_border'%>" placeholder="<%= flash[:error].nil? ? 'Notify me about Launch' : flash[:error]%>"/>
+							<input name="user[email]" type="text" id="email" class="email<%= flash[:error].nil? ? '' : ' error_border'%>" placeholder="<%= flash[:error].nil? ? 'e-mail me about Android' : flash[:error]%>"/>
 						</div>
 						<input type="submit" name="submit" value="GO" class="submit_button" id="submit_join"/>
 						<%end%>
 					</div>
-				</div>-->
+				</div>
 			</div>
 	</body>
 </html>

@@ -262,11 +262,8 @@ Feature Details
 
 
 #f_intro_index {
-	background: url("/assets/landing_41.jpg") no-repeat -240px 0;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+    background-color: rgba(158, 199, 204, 1);
 }
 
 
