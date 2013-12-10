@@ -1,12 +1,57 @@
-<div class="feature" id="f_intro_index">
-	<p class="header" style="color: #fff; font-weight: 700; text-shadow: none">
-		Get Together
-	</p>
-		<a href="https://itunes.apple.com/us/app/canu-get-together/id697998179?mt=8&uo=4"><img class="appstore_badge" src="/assets/badge_135x40.svg"></a>
-	<img class="feed_phone" src="assets/feed_phone.png">
-
-	<p class="header_secondary" style="color: #fff">
-		Propose or find what you feel like doing. Get together and share moments with friends and new friends - for free.</span>
-	</p>		
+<div class="logo_top"></div>
+<div class="proto">Prototype</div>
+<div class="section active" id="section0">
+	<h2>
+		All future moments in one place <br/>
+		<a href="https://itunes.apple.com/nz/app/canu-get-together/id697998179?mt=8#" class="store">Get The App</a>
+		<span class="clear"></span>	
+		<span class="android">I got Android		
+			<div class="codes">
+				<%unless flash[:ok].nil?%>
+					<div id="confirmation"><%=flash[:ok]%></div>
+				<%end%>
+				<div class="form_window" id="form_join"<%= flash[:goaway]%>>
+					<%= form_for @user, :url => new_user_url do |f|%>
+					
+					<div class="input_holder">
+						<input name="user[email]" type="email" id="email" class="email<%= flash[:error].nil? ? '' : ' error_border'%>" placeholder="<%= flash[:error].nil? ? 'Your e-mail' : flash[:error]%>"/>
+					</div>
+					<input type="submit" name="submit" value="Invite when ready" class="submit_button" id="submit_join"/>
+					<%end%>
+				</div>
+			</div>
+		</span>
+	
+	</h2>
+	<!--<img class="phone" src="/assets/app.png">-->
 </div>
-
+<div class="section" id="section1">
+	<h3>Local</h3>
+	<img class="icon" src="/assets/icon_bird.png">
+	<h4 class="shadow_blue"> Be part of the future activities around you
+	</h4>
+	<p class="description">
+	 	We all have days when we want to meet new faces. CANU enables you to share moments with people you have no prior relation to. 
+	</p>
+	<img class="local" src="/assets/local.png">
+</div>
+<div class="section" id="section2">
+	<h3>Me</h3>
+	<img class="icon" src="/assets/icon_feather.png">
+	<h4 class="shadow_green">A clear overview of your casual plans</h4>
+<p class="description">
+		CANU let's you collect your upcoming activities with one tap.
+	</p>
+	<img class="local" src="/assets/me.png">
+</div>
+<div class="section" id="section3">
+	<h3>Tribes</h3>
+	<p class="c_soon">In Development</p>
+	<img class="icon" src="/assets/icon_tipi.png">
+	<h4>The hassle of getting your friends together - solved
+	</h4>
+	<p class="description">
+		We all know how hard it is to get a group of friends together for a casual activity. Group chats, phone calls and Facebook just don't do the job. CANU removes all the unnecessary communication.	
+	</p>
+	<img class="local" src="/assets/tribes.png">
+</div>

@@ -8,15 +8,18 @@ Canu::Application.routes.draw do
 
   # Sample of named route:
   
-   # match 'stats' => 'pages#stats', :as => 'user_stats'
+    match 'stats' => 'users#stats', :as => 'user_stats'
     match 'user/new' => 'users#new', :as => "new_user"
     match 'about' => 'pages#about', :as => 'about'
     match 'product' => 'pages#product', :as => 'product'
-   # match 'index' => 'pages#index'
+    match 'index' => 'pages#index'
     match 'world' => 'pages#world', :as => 'world'
-   # match 'jobs' => 'pages#jobs', :as => 'jobs'
-   # match 'contacts' => 'pages#contacts', :as => 'contacts'
-   # match 'press' => 'pages#press', :as => 'press'
+    match 'jobs' => 'pages#jobs', :as => 'jobs'
+    match 'contacts' => 'pages#contacts', :as => 'contacts'
+    match 'press' => 'pages#press', :as => 'press'
+    match 'privacy' => 'pages#privacy', :as => 'privacy'
+    match 'terms' => 'pages#terms', :as => 'terms'
+    match 'help' => 'pages#help', :as => 'help'
 
   # ---------------------------API--------------------------------------
     # ------------------------USERS-------------------------------------

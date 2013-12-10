@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'simple'
+
   def stats
     @title = "Statistics"
     @confirm = User.find_all_by_used(true)
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
    end
    #Mailer.new_user_mail(@user).deliver
  
-    redirect_to :back, :anchor => 'form'
+    redirect_to :back
   end
   
 =begin
