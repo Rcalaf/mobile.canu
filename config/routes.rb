@@ -6,20 +6,98 @@ Canu::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-  # Sample of named route:
-  
-    match 'stats' => 'users#stats', :as => 'user_stats'
-    match 'user/new' => 'users#new', :as => "new_user"
-    match 'about' => 'pages#about', :as => 'about'
-    match 'product' => 'pages#product', :as => 'product'
-    match 'index' => 'pages#index'
-    match 'world' => 'pages#world', :as => 'world'
-    match 'jobs' => 'pages#jobs', :as => 'jobs'
-    match 'contacts' => 'pages#contacts', :as => 'contacts'
-    match 'press' => 'pages#press', :as => 'press'
-    match 'privacy' => 'pages#privacy', :as => 'privacy'
-    match 'terms' => 'pages#terms', :as => 'terms'
-    match 'help' => 'pages#help', :as => 'help'
+  resources :users
+  #resources :pages
+  #resources :tribemachine
+
+    #
+    # Homepage:
+    #
+        match 'user/new' => 'users#new', :as => "new_user"
+        match 'vision' => 'pages#vision', :as => 'vision'
+        match 'about' => 'pages#about', :as => 'about'
+        match 'product' => 'pages#product', :as => 'product'
+        match 'index' => 'pages#index'
+        match 'world' => 'pages#world', :as => 'world'
+        match 'jobs' => 'pages#jobs', :as => 'jobs'
+        match 'contacts' => 'pages#contacts', :as => 'contacts'
+        match 'press' => 'pages#press', :as => 'press'
+        match 'support' => 'pages#support', :as => 'support'
+            match 'privacy' => 'pages#privacy', :as => 'privacy'
+            match 'terms' => 'pages#terms', :as => 'terms'
+            match 'help' => 'pages#help', :as => 'help'
+        match 'start' => 'tribemachine#start', :as => 'start'
+        
+        
+    #
+    # Linked to App:
+    #
+    
+        match 'privacyapp' => 'webapp#privacy', :as => 'privacyapp'
+        match 'termsapp' => 'webapp#terms', :as => 'termsapp'
+        match 'lockdown' => 'webapp#lockdown', :as => 'lockdown'
+        
+    #
+    # Technical:
+    #
+        match 'resetpassword' => 'users#resetpassword', :as => 'resetpassword'
+        match 'email-confirmed' => 'users#emailconfirmation', :as => 'emailconfirmation'
+
+    #
+    # For Internal Use (Protected)
+    #
+        match 'stats' => 'users#stats', :as => 'user_stats'
+    #    match 'activities' => 'webapp#activities', :as => 'activities'
+
+
+    #
+    # Web App:
+    #
+       match 'index_demo' => 'pages#index_demo', :as => 'index_demo'
+       match 'sign-in' => 'webapplication/session#sign_in', :as => 'sign_in'
+       match 'set-location' => 'webapplication/session#set_location', :as => 'set_location'
+       
+       match 'sign-up' => 'webapplication/session#sign_up', :as => 'sign_up'
+       match 'facebook-auth' => 'webapplication/session#facebook_auth',:as => 'facebook_auth'
+       
+       
+       match 'statistics' => 'webapplication/statistics#index', :as => 'statistics'
+        
+        #
+        # From Invite:
+        #
+            match 'invite/:activity_id' => 'webapp#invite', :as => 'invite'
+            
+            # Add Name for a single interaction
+            match 'contribute' => 'webapp#contribute', :as => 'contribute'
+            
+            # Forward expired activity to this page
+            match 'expired' => 'webapp#expired', :as => 'expired'
+        
+        #
+        # Sign Up
+        #
+            match 'iamnew_account' => 'webapp#iamnew_account', :as => 'iamnew_account'
+            match 'iamnew_profile' => 'webapp#iamnew_profile', :as => 'iamnew_profile'
+        
+        #
+        # Signed In
+        #
+            # List of Feeds
+            match 'fullview_signedin' => 'webapp#fullview_signedin', :as => 'fullview_signedin'
+            match 'activities' => 'webapplication/activities#index', :as => "activities"
+            match 'activities/:activity_id' => 'webapplication/activities#show', :as => "show_activity"
+        
+            # Full View of an activity
+            match 'fullview/:activity_id' => 'webapp#fullview', :as => 'fullview'
+
+            # Settings
+            match 'settings' => 'webapp#settings', :as => 'settings'
+            match 'edit_profile' => 'webapp#edit_profile', :as => 'edit_profile'
+        
+    
+    
+    
 
   # ---------------------------API--------------------------------------
     # ------------------------USERS-------------------------------------

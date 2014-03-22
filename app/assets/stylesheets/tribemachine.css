@@ -1,0 +1,174 @@
+
+/******************************
+Web App - Full View
+*******************************/
+
+
+div.fullslide {
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow: hidden;
+}
+
+#story_1 {
+	background-color: #83d3d6;
+	background-color: #f1f5f5;
+}
+
+#story_2 {
+	background-color: #ec6057;
+	background-color: #f1f5f5;
+}
+
+#story_3_1 {
+	background-color: #83d3d6;
+	background-color: #f1f5f5;
+}
+
+#story_3_2 {
+	background-color: #83d3d6;
+	background-color: #f1f5f5;
+}
+
+#story_3_3 {
+	background-color: #83d3d6;
+	background-color: #f1f5f5;
+}
+
+#story_4_1 {
+	background-color: #2b4b58;
+	background-color: #f1f5f5;
+}
+
+#story_4_2 {
+	background-color: #2b4b58;
+	background-color: #f1f5f5;
+}
+
+#story_4_3 {
+	background-color: #2b4b58;
+	background-color: #f1f5f5;
+}
+
+#story_4_4 {
+	background-color: #2b4b58;
+	background-color: #f1f5f5;
+}
+
+#story_5 {
+	background-color: #ffd620;
+	background-color: #f1f5f5;
+}
+
+#story_6_1 {
+	background-color: #f1f5f5;
+}
+
+#story_6_2 {
+	background-color: #f1f5f5;
+}
+
+#story_6_3 {
+	background-color: #f1f5f5;
+}
+
+#story_6_4 {
+	background-color: #f1f5f5;
+}
+
+
+/******************************
+Story Content
+*******************************/
+
+div.story_title {
+	margin: 0 auto;
+	margin-top: 100px;
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 72px;
+	max-width: 900px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 30px 30px;
+	color: #2b4b58;
+}
+
+div.story_details {
+	margin: 0 auto;
+	margin-top: 60px;
+	font-weight: 400;
+	max-width: 600px;
+	font-size: 26px;
+	line-height: 26px;
+	padding: 30px 30px;
+	text-align: center;
+	color: #2b4b58;
+	clear: both;
+}
+
+
+ul.choices {
+	position: fixed;
+	bottom: 140px;
+	left: 0;
+	height: 58px;
+	width: 100%;
+	margin: 0;
+} 
+
+
+ul.choices li.story_choice {
+	list-style: none;
+	float: left;
+	color: #2b4b58;
+	display: block;
+	width: auto;
+	height: 100px;
+	line-height: 100px;
+	font-size: 22px;
+	font-weight: 700;
+	padding: 0 40px;
+	border: 2px solid #2b4b58;
+	text-align: center;
+	margin-left: 30px;
+	text-transform: uppercase;
+	border-radius: 50px;
+}
+
+ul.choices li:hover {
+	cursor: pointer;
+	color: #fff;
+	background-color: #2b4b58;
+}
+
+
+div.c_centering {
+	display: table;
+	margin: 0 auto;
+}
+
+
+a.choice_reset {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
+	display: block;
+	width: 140px;
+	font-size: 12px;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	background-color: #fff;
+	opacity: 0.3;
+}
+
+a.choice_reset:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+
+

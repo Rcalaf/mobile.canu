@@ -1,24 +1,24 @@
 class PagesController < ApplicationController
-  layout 'main_page', :except => [:jobs, :press, :contacts, :about, :privacy, :terms, :help]
+  layout 'main_page', :except => [:jobs, :press, :contacts, :about, :vision, :support, :privacy, :terms, :help, :resetpassword, :start]
   
   def index
      @title = "CANU - Get Together"
      @user = User.new
    end
+  
+  def index_demo
+      @title = "CANU - Get Together"
+      @user = User.new
+  end
 
    def about
-     @title = "CANU - About Us"
+     @title = "CANU - Our Story"
      @user = User.new
    end
-
-   def world
-     @title = "CANU - World"
-     @user = User.new
-   end
-
-   def product
-     @title = "CANU - Product"
-     @user = User.new
+   
+   def vision
+       @title = "CANU - Product Vision"
+       @user = User.new
    end
 
    def jobs
@@ -36,7 +36,12 @@ class PagesController < ApplicationController
      @user = User.new
    end
    
-   def privacy
+   def support
+       @title = "CANU - Support"
+       @user = User.new
+   end
+
+    def privacy
      @title = "CANU - Privacy"
      @user = User.new
    end 
@@ -49,5 +54,7 @@ class PagesController < ApplicationController
    def help
      @title = "CANU - Help"
      @user = User.new
-   end      
+   end    
+   
+      
 end

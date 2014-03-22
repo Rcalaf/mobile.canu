@@ -1,18 +1,27 @@
 <!DOCTYPE HTML!>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<meta charset="utf-8">
 		<title><%=@title%></title>
 
 		<meta http-equiv="Content-language" content="en" /> 
-		<meta name="Keywords" content="CANU, app, activities, stockholm, hyper island">
-		<meta name="Description" content="CANU is an app that makes it fast and simple for you to share and join spontaneous activities on the go.">		
+		<meta name="Keywords" content="CANU, app, canu app, activities, stockholm, hyper island, get together">
+		<meta name="Description" content="Put your future activities in one place. CANU is the quickest way to get your friends together.">	
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">	
+		<%= display_meta_tags %>
+		<%= csrf_meta_tags %>
+		<%= content_for :head %>
+				
+		<meta name="apple-itunes-app" content="app-id=697998179, affiliate-data=myAffiliateData, app-argument=myURL">
 	
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 		<%= stylesheet_link_tag 'style' %>
 
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+		<script src='https://raw.github.com/x1024/jquery-fastbutton/master/bin/fastbutton.js'></script>
 		
 		<%= javascript_include_tag "application" %>
 		
@@ -23,6 +32,7 @@
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-39022803-1']);
 		  _gaq.push(['_trackPageview']);
+		  _gaq.push(['_trackEvent', 'to_app_store']);
 
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -30,28 +40,12 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 
-		</script>
-		
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		  ga('create', 'UA-42941115-1', 'canu.se');
-		  ga('send', 'pageview');
-		
-		</script>
-		
-		<script type="text/javascript">
 		  var disqus_identifier = 'canu';
-		</script>
 		
-
-
-				
+		</script>
+	
 	</head>
-	<body>
+	<body class="<%=@body_class%> 'use-fastclick'">
 	
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -63,46 +57,22 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 		
 
-		<!--		
-		<div class="codes">
-			<%unless flash[:ok].nil?%>
-				<div id="confirmation"><%=flash[:ok]%></div>
-			<%end%>
-			<div class="form_window" id="form_join"<%= flash[:goaway]%>>
-				<%= form_for @user, :url => new_user_url do |f|%>
-				<input type="submit" name="submit" value="GO" class="submit_button" id="submit_join"/>
-				<div class="input_holder">
-					<input name="user[email]" type="email" id="email" class="email<%= flash[:error].nil? ? '' : ' error_border'%>" placeholder="<%= flash[:error].nil? ? 'e-mail me about Android' : flash[:error]%>"/>
-				</div>
-				<%end%>
+
+		<ul class="bottom_menu mobile_hide">
+			<div class="centering">
+				<li><a href="https://www.facebook.com/canugettogether" target="_blank">Facebook</a></li>
+				<li><a href="https://twitter.com/canugettogether" target="_blank">Twitter</a></li>
+				<li id="feedback_btn" class="right"><a href="#">Feedback</a></li>
+				<li class="right"><a href="vision">About</a></li>
 			</div>
-		</div>
-		-->
-
-		<div class="social_connect">
-	        <div id="fb_boxy">
-	            <div class="fb-like"  data-href="https://www.facebook.com/pages/CANU/176144762529176" data-send="false" data-layout="button_count" data-width="292" data-show-faces="false" data-font="trebuchet ms"></div>
-	        </div>
-			 <div>
-	            <a href="https://twitter.com/CANUgettogether" class="twitter-follow-button" data-show-count="false">Follow @CANUgettogether</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	        </div>
-	    </div>	
-
-		<ul class="bottom_menu">
-			<li><a href="press">Press</a></li>
-			<li><a href="help">Help</a></li>
-			<li><a href="http://canugettogether.tumblr.com">Blog</a>
-			<li id="feedback_btn">Feedback</li>
-			<li><a href="about">About Us</a></li>
 		</ul>
 
 		<div id="comments_blur">
 			<div id="comments_description">
-				 Feedback, advice, compliments, complaints, whatever you feel like sharing...<br/><br/>			
+				 What do you think so far?		
 			</div>
 		</div>
-		<div id="comments_container">
+		<div id="comments_container" class="mobile_hide">
 
 			<!--<div id="close_btn"></div>-->
 			<div id="comments">
